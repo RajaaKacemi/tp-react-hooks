@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 import { SeachContext } from '../App';
+import useDebounce from './useDebounce';
 
 // TODO: Exercice 3.1 - Créer le hook useDebounce
 // TODO: Exercice 3.2 - Créer le hook useLocalStorage
@@ -10,6 +11,7 @@ const useProductSearch = () => {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const debouncedSearchTerm = useDebounce(isSearchTerm, 500);
   // TODO: Exercice 4.2 - Ajouter l'état pour la pagination
 
   useEffect(() => {
@@ -32,17 +34,17 @@ const useProductSearch = () => {
   }, []); // TODO: Exercice 4.2 - Ajouter les dépendances pour la pagination
 
   useEffect(() => {
-    if (isSearchTerm) {
+    if (debouncedSearchTerm) {
       setFilteredProducts(
-        products.filter((product) => 
-          product.title.toLowerCase().includes(isSearchTerm.toLowerCase())
+        products.filter((product) =>
+          product.title.toLowerCase().includes(debouncedSearchTerm.toLowerCase())
         )
       );
     } else {
       setFilteredProducts(products);
     }
 
-  }, [isSearchTerm, products]);
+  }, [isSearchTerm, products, debouncedSearchTerm]);
 
   // TODO: Exercice 4.1 - Ajouter la fonction de rechargement
   // TODO: Exercice 4.2 - Ajouter les fonctions pour la pagination
