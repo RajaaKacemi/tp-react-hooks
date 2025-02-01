@@ -4,10 +4,11 @@ import useProductSearch from '../hooks/useProductSearch';
 
 const ProductList = () => {
   const { isDarkTheme } = useContext(ThemeContext);
+
   // TODO: Exercice 2.1 - Utiliser le LanguageContext pour les traductions
   
   const { 
-    products, 
+    filteredProducts, 
     loading, 
     error,
     // TODO: Exercice 4.1 - Récupérer la fonction de rechargement
@@ -27,12 +28,13 @@ const ProductList = () => {
       Erreur: {error}
     </div>
   );
+
   
   return (
     <div>
       {/* TODO: Exercice 4.1 - Ajouter le bouton de rechargement */}
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-        {products.map(product => (
+        {filteredProducts && filteredProducts.map(product => (
           <div key={product.id} className="col">
             <div className={`card h-100 ${isDarkTheme ? 'bg-dark text-light' : ''}`}>
               {product.thumbnail && (
@@ -54,6 +56,7 @@ const ProductList = () => {
             </div>
           </div>
         ))}
+        
       </div>
       
       {/* TODO: Exercice 4.2 - Ajouter les contrôles de pagination */}

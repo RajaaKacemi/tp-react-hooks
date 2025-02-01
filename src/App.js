@@ -6,9 +6,11 @@ import ThemeToggle from './components/ThemeToggle';
 // TODO: Exercice 2.1 - Créer le LanguageContext
 
 export const ThemeContext = createContext();
+export const SeachContext = createContext();
 
 const App = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [isSearchTerm, setSearchTerm ] = useState();
   // TODO: Exercice 2.2 - Ajouter l'état pour la langue
 
   return (
@@ -23,8 +25,11 @@ const App = () => {
           </div>
         </header>
         <main>
+        <SeachContext.Provider value={{ isSearchTerm, setSearchTerm }}>
           <ProductSearch />
           <ProductList />
+        </SeachContext.Provider>
+
         </main>
       </div>
     </ThemeContext.Provider>
