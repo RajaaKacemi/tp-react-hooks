@@ -1,0 +1,12 @@
+{
+    "FR": {
+        "searchPlaceholder": "Rechercher un produit...",
+        "price": "Prix ",
+        "title": "Catalogue de Produits"
+      },
+    "ENG": {
+        "searchPlaceholder": "Search for a product...",
+        "price": "Price ",
+        "title": "Product Catalogue"
+    }
+}
