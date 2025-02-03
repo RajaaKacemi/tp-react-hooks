@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../App';
 
-const ThemeToggle = () => {
+const LanguageToggle = () => {
   const { isDarkTheme, setIsDarkTheme } = useContext(ThemeContext);
   
   return (
@@ -18,4 +18,4 @@ const ThemeToggle = () => {
   );
 };
 
-export default ThemeToggle;
+export default LanguageToggle;
