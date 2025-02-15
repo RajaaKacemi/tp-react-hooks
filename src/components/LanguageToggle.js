@@ -1,14 +1,19 @@
 import React, { useContext } from 'react';
 import { LanguageContext } from '../App';
+import useLocalStorage from '../hooks/useLocalStorage';
 
 const ThemeToggle = () => {
   const { isLanguage, setLanguage } = useContext(LanguageContext);
+  const [localStorage, setLocalStorage] = useLocalStorage('language', '');
   
   return (
     <button
-      onClick={() => setLanguage((isLanguage) =>
-        isLanguage === 'FR' ? 'ENG' : 'FR'
-    )}
+      onClick={() => {
+        const newLanguage = isLanguage === 'FR' ? 'ENG' : 'FR';
+        setLanguage(newLanguage);
+        setLocalStorage(newLanguage);
+      }}
+
       className={`px-5 py-2 rounded ${
         isLanguage 
           ? 'bg-dark text-light border border-light' 
