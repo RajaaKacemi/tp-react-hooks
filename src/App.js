@@ -4,15 +4,17 @@ import ProductSearch from './components/ProductSearch';
 import ThemeToggle from './components/ThemeToggle';
 import LanguageToggle from './components/LanguageToggle';
 import data from "./data/data.json";
+import useDebounce from './hooks/useDebounce';
 // TODO: Exercice 2.1 - Créer le LanguageContext
 
 export const ThemeContext = createContext();
-export const SeachContext = createContext();
 export const LanguageContext = createContext();
 
 const App = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
-  const [isSearchTerm, setSearchTerm ] = useState();
+  const [searchTerm, setSearchTerm] = useState('');
+  const debouncedSearchValue = useDebounce(searchTerm, 1000)
+
   // TODO: Exercice 2.2 - Ajouter l'état pour la langue
   const [isLanguage, setLanguage] = useState("ENG");
 
@@ -30,10 +32,8 @@ const App = () => {
           </div>
         </header>
         <main>
-        <SeachContext.Provider value={{ isSearchTerm, setSearchTerm }}>
-          <ProductSearch />
-          <ProductList />
-        </SeachContext.Provider>
+          <ProductSearch setSearchTerm={setSearchTerm} />
+          <ProductList filtringSearchTherm={debouncedSearchValue} />
         </main>
       </div>
       </LanguageContext.Provider>
