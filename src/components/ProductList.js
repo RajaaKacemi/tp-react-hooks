@@ -79,17 +79,17 @@ const ProductList = ({filtringSearchTherm}) => {
         <ul className="pagination justify-content-center">
           <li className="page-item">
             <button className="page-link" onClick={previousPage}>
-              Précédent
+            {isLanguage === "FR" ? "Précédent" : "Previous"}
             </button>
           </li>
           <li className="page-item">
             <span className="page-link">
-              Page {currentPage} sur {totalPages}
+              {currentPage} ... {totalPages}
             </span>
           </li>
           <li className="page-item">
             <button className="page-link" onClick={nextPage}>
-              Suivant
+            {isLanguage === "FR" ? "Suivant" : "Next"}
             </button>
           </li>
         </ul>
