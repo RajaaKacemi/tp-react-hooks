@@ -53,7 +53,10 @@ Pour chaque exercice :
 
 _Votre réponse pour l'exercice 1 :_
 ```
-Expliquez votre solution ici
+- Dans mon composant App, j'ai déclaré une state searchTerm pour gérer la valeur de recherche saisie par l'utilisateur. Cette state est partagée entre les composants ProductSearch et ProductList via les props, permettant ainsi de filtrer les produits en fonction de la valeur de recherche.
+
+Pour optimiser les performances et éviter des mises à jour trop fréquentes pendant que l'utilisateur tape, j'ai utilisé le hook useDebounce. Ce hook permet de retarder la mise à jour de la valeur de recherche jusqu'à ce que l'utilisateur ait cessé de taper pendant un délai d'une seconde. Cela évite des requêtes ou des filtrages inutiles à chaque frappe.
+
 [Ajoutez vos captures d'écran]
 ```
 
@@ -66,7 +69,9 @@ Expliquez votre solution ici
 
 _Votre réponse pour l'exercice 2 :_
 ```
-Expliquez votre solution ici
+D'abord j'ai créer un Context LanguageContext qui permet de partager la langue sélectionnée (par exemple, "FR" pour français ou "ENG" pour anglais) à travers tous les composants de l'application.
+j'ai également ajouter un Toggle comme composant dans la composant App, afin que l'utilisateur choisir la langue souhaité.
+
 [Ajoutez vos captures d'écran]
 ```
 
@@ -79,7 +84,10 @@ Expliquez votre solution ici
 
 _Votre réponse pour l'exercice 3 :_
 ```
-Expliquez votre solution ici
+- J'ai implémenté un hook personnalisé useDebounce dans un dossier hooks qui permet de retarder l'exécution d'une fonction jusqu'à ce qu'un certain délai (delay) se soit écoulé depuis la dernière modification de la valeur (value). Ce hook est utile pour optimiser les performances.
+
+- J'ai implémenté un hook personnalisé useStorageLanguage dans un dossier hooks qui permet de storer la valeur du langauge souhaité d'aprèsl'utilisateur dans un clé qui s'appelle language.
+
 [Ajoutez vos captures d'écran]
 ```
 
@@ -92,7 +100,9 @@ Expliquez votre solution ici
 
 _Votre réponse pour l'exercice 4 :_
 ```
-Expliquez votre solution ici
+J'ai implémenté la pagination en appelant l'API avec les paramètres skip et limit. Chaque page contient 10 produits, et naviguer vers une nouvelle page signifie sauter 10 * (numéro de la page - 1) produits.
+L'état currentPage suit le numéro de la page actuelle, et la valeur de skip est calculée dynamiquement comme 10 * (currentPage - 1). Lorsque l'utilisateur clique sur "Suivant" ou "Précédent", la valeur de currentPage est mise à jour, ce qui déclenche un nouvel appel API avec les nouvelles valeurs de skip et limit.
+
 [Ajoutez vos captures d'écran]
 ```
 
