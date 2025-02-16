@@ -72,11 +72,10 @@ _Votre réponse pour l'exercice 2 :_
 ```
 D'abord j'ai créer un Context LanguageContext qui permet de partager la langue sélectionnée (par exemple, "FR" pour français ou "ENG" pour anglais) à travers tous les composants de l'application.
 j'ai également ajouter un Toggle comme composant dans la composant App, afin que l'utilisateur choisir la langue souhaité.
-
+```
 ![image_Alt]([image_url](https://github.com/RajaaKacemi/tp-react-hooks/blob/ad96f059a54c6542514a63be1d3c5d712bc23ecf/public/assets/exercice2.1.png))
 
 ![image_Alt]([image_url](https://github.com/RajaaKacemi/tp-react-hooks/blob/ad96f059a54c6542514a63be1d3c5d712bc23ecf/public/assets/exercice2.2.png))
-```
 
 ### Exercice 3 : Hooks Personnalisés
 #### Objectif : Créer des hooks réutilisables
