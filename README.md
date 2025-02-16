@@ -57,7 +57,7 @@ _Votre réponse pour l'exercice 1 :_
 
 Pour optimiser les performances et éviter des mises à jour trop fréquentes pendant que l'utilisateur tape, j'ai utilisé le hook useDebounce. Ce hook permet de retarder la mise à jour de la valeur de recherche jusqu'à ce que l'utilisateur ait cessé de taper pendant un délai d'une seconde. Cela évite des requêtes ou des filtrages inutiles à chaque frappe.
 
-![image_Alt]([image_url](https://github.com/RajaaKacemi/tp-react-hooks/blob/ad96f059a54c6542514a63be1d3c5d712bc23ecf/public/assets/exercice1.png))
+![image_Alt](https://github.com/RajaaKacemi/tp-react-hooks/blob/ad96f059a54c6542514a63be1d3c5d712bc23ecf/public/assets/exercice1.png)
 ```
 
 ### Exercice 2 : Context et Internationalisation
