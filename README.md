@@ -57,7 +57,7 @@ _Votre réponse pour l'exercice 1 :_
 
 Pour optimiser les performances et éviter des mises à jour trop fréquentes pendant que l'utilisateur tape, j'ai utilisé le hook useDebounce. Ce hook permet de retarder la mise à jour de la valeur de recherche jusqu'à ce que l'utilisateur ait cessé de taper pendant un délai d'une seconde. Cela évite des requêtes ou des filtrages inutiles à chaque frappe.
 
-[Ajoutez vos captures d'écran]
+![image_Alt]([image_url](https://github.com/RajaaKacemi/tp-react-hooks/blob/ad96f059a54c6542514a63be1d3c5d712bc23ecf/public/assets/exercice1.png))
 ```
 
 ### Exercice 2 : Context et Internationalisation
@@ -72,7 +72,9 @@ _Votre réponse pour l'exercice 2 :_
 D'abord j'ai créer un Context LanguageContext qui permet de partager la langue sélectionnée (par exemple, "FR" pour français ou "ENG" pour anglais) à travers tous les composants de l'application.
 j'ai également ajouter un Toggle comme composant dans la composant App, afin que l'utilisateur choisir la langue souhaité.
 
-[Ajoutez vos captures d'écran]
+![image_Alt]([image_url](https://github.com/RajaaKacemi/tp-react-hooks/blob/ad96f059a54c6542514a63be1d3c5d712bc23ecf/public/assets/exercice2.1.png))
+
+![image_Alt]([image_url](https://github.com/RajaaKacemi/tp-react-hooks/blob/ad96f059a54c6542514a63be1d3c5d712bc23ecf/public/assets/exercice2.2.png))
 ```
 
 ### Exercice 3 : Hooks Personnalisés
@@ -88,7 +90,9 @@ _Votre réponse pour l'exercice 3 :_
 
 - J'ai implémenté un hook personnalisé useStorageLanguage dans un dossier hooks qui permet de storer la valeur du langauge souhaité d'aprèsl'utilisateur dans un clé qui s'appelle language.
 
-[Ajoutez vos captures d'écran]
+![image_Alt]([image_url](https://github.com/RajaaKacemi/tp-react-hooks/blob/ad96f059a54c6542514a63be1d3c5d712bc23ecf/public/assets/exercice3.1.png))
+![image_Alt]([image_url](https://github.com/RajaaKacemi/tp-react-hooks/blob/ad96f059a54c6542514a63be1d3c5d712bc23ecf/public/assets/exercice3.2.png))
+![image_Alt]([image_url](https://github.com/RajaaKacemi/tp-react-hooks/blob/ad96f059a54c6542514a63be1d3c5d712bc23ecf/public/assets/exercice3.png))
 ```
 
 ### Exercice 4 : Gestion Asynchrone et Pagination
@@ -103,7 +107,7 @@ _Votre réponse pour l'exercice 4 :_
 J'ai implémenté la pagination en appelant l'API avec les paramètres skip et limit. Chaque page contient 10 produits, et naviguer vers une nouvelle page signifie sauter 10 * (numéro de la page - 1) produits.
 L'état currentPage suit le numéro de la page actuelle, et la valeur de skip est calculée dynamiquement comme 10 * (currentPage - 1). Lorsque l'utilisateur clique sur "Suivant" ou "Précédent", la valeur de currentPage est mise à jour, ce qui déclenche un nouvel appel API avec les nouvelles valeurs de skip et limit.
 
-[Ajoutez vos captures d'écran]
+![image_Alt]([image_url](https://github.com/RajaaKacemi/tp-react-hooks/blob/ad96f059a54c6542514a63be1d3c5d712bc23ecf/public/assets/exercice4.png))
 ```
 
 ## Rendu
