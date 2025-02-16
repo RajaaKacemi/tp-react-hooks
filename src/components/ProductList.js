@@ -15,6 +15,11 @@ const ProductList = ({filtringSearchTherm}) => {
     error,
     // TODO: Exercice 4.1 - Récupérer la fonction de rechargement
     // TODO: Exercice 4.2 - Récupérer les fonctions et états de pagination
+    totalPages,
+    currentPage,
+    reload,
+    nextPage,
+    previousPage,
   } = useProductSearch();
   
   if (loading) return (
@@ -35,6 +40,9 @@ const ProductList = ({filtringSearchTherm}) => {
   return (
     <div>
       {/* TODO: Exercice 4.1 - Ajouter le bouton de rechargement */}
+      <button onClick={reload} className="btn btn-primary mb-3">
+        {isLanguage === "FR" ? "Recharger" : "Reload"}
+      </button>
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
       {products
           .filter(product => String(product.title).includes(filtringSearchTherm))
@@ -63,8 +71,10 @@ const ProductList = ({filtringSearchTherm}) => {
         
       </div>
       
-      {/* TODO: Exercice 4.2 - Ajouter les contrôles de pagination */}
-      {/* Exemple de structure pour la pagination :
+      {/* TODO: Exercice 4.2 - Ajouter les contrôles de pagination 
+          Exemple de structure pour la pagination :
+      */}
+      
       <nav className="mt-4">
         <ul className="pagination justify-content-center">
           <li className="page-item">
@@ -84,7 +94,7 @@ const ProductList = ({filtringSearchTherm}) => {
           </li>
         </ul>
       </nav>
-      */}
+     
     </div>
   );
 };
